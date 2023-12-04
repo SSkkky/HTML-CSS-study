@@ -271,7 +271,7 @@ body {
                 transition: 0.5s;
 
                 img {
-                    padding: 32px;
+                    padding: 40px;
                     $imgs : (1:'vector1.png', 2: 'vector2.png', 3:'vector3.png');
 
                     @each $i, $url in $imgs {
