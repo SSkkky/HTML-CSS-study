@@ -1,0 +1,60 @@
+// $wid : 1536px;
+
+@mixin font-mont($font-size) {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-align: center;
+    font-size: $font-size;
+    color: #212529;
+    @content;
+}
+
+@mixin flex($jc) {
+    display: flex;
+    justify-content: $jc;
+    @content;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    @content;
+}
+
+//@each = List data 반복
+
+$imgs : ();
+
+@each $i, $url in $imgs {
+    :nth-child(#{$i})>p {
+        background : no-repeat center ('../img/#{$url}');
+    }
+}
+
+
+
+
+/* 반응형 */
+$mobile: 767px;
+$pc_1: 1295px;
+$pc_2: 855px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin pc_1 {
+    @media (max-width: #{$pc_1}) {
+        @content;
+    }
+}
+
+@mixin pc_2 {
+    @media (max-width: #{$pc_2}) {
+        @content;
+    }
+}
