@@ -1,0 +1,93 @@
+@import url('reset.css');
+@import url('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+
+/* 변수 선언 가능 (--변수: ;) */
+/* 적용= var(--h) */
+:root{
+	--h:100vh;
+}
+
+.swiper{
+    height: var(--h);
+    overflow: hidden;
+}
+
+.swiper-slide{
+	position: relative;
+	overflow: hidden;
+}
+.swiper-slide>img{width:100%; height:100%; object-fit: cover;}
+.swiper-slide>figcaption{
+    position: absolute;
+    top:0; left:0; 
+    width:40%; 
+    height:100%;
+    background-color: rgba(80,128,38,0.5);
+
+    padding:0 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:white;
+}
+
+.swiper-slide > figcaption > dl{}
+.swiper-slide > figcaption > dl > div{margin:60px 0;}
+.swiper-slide > figcaption > dl > div > dt{}
+
+/*가상요소*/
+.swiper-slide > figcaption > dl > div > dt::before{
+    content: '';
+    width:6px; height:6px; border-radius: 100%;
+    background-color: white;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right:10px;
+}
+
+
+.swiper-slide > figcaption > dl > div > dd{}
+
+.swiper-slide > figcaption{
+    transform: translateX(-100%);
+    transition: 1s;
+}
+.swiper-slide-active > figcaption{
+    transform: translateX(0%);
+}
+
+
+
+
+
+
+/* swiper-pagination */
+/* .swiper-pagination{
+	margin-right: 1rem;
+}
+.swiper-pagination-bullet{
+	width: 1rem;
+	height: 1rem;
+	margin-bottom: 0.5rem;
+	background-color: rgba(255,255,255,0.5);
+	opacity: 100;
+}
+
+.swiper-pagination-bullet-active{
+	background-color: #5D912E;
+} */
+
+/* !important = 우선순위 */
+.swiper-pagination{
+	margin-right: 1rem !important;
+}
+.swiper-pagination-bullet{
+	width: 1rem;
+	height: 1rem;
+	display: block !important;
+	margin: 10px 0 !important;
+}
+
+.swiper-pagination-bullet-active{
+	background-color: #5D912E;
+}
