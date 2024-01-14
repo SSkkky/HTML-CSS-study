@@ -1,0 +1,277 @@
+@import url(reset.css);
+
+h1,h2,h3 {
+    font-family: 'prociono';
+    font-weight: 400;
+}
+
+/* 공통적용 */
+.view-more {
+    font-family: 'prociono';
+    white-space: nowrap;
+    font-size: 32px;
+    text-decoration: underline;
+}
+
+/* header */
+body {margin: auto;}
+
+header {
+    width: 1536px;
+    margin:auto;
+    display: flex;
+    padding: 48px 0;
+    justify-content: space-between;
+    align-items: center;
+    gap: 380px;
+}
+
+header>h1>a {font-size: 24px;}
+
+header>nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 108px;
+}
+
+header>nav>a {
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+header>nav>a:hover{color: sandybrown;}
+
+/* spot */
+.spot {
+    width: 1536px;
+    margin:auto;
+    height: 626px;
+    background: url('../img/CON1.jpg') 0 0 / cover no-repeat;
+    border-radius: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.spot-text>h2 {
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 160%;
+    animation: opacity 2s ease-in-out;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0%;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: scale(100%);
+    }
+}
+
+.spot-text>p {margin-top: 10px;}
+
+.view {
+    margin: 40px auto;
+    width: 170px;
+    height: 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+.view>a>span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 8px;
+    z-index: 1;
+}
+
+.spot-text:hover>.view>a>.view-bg {
+    transform: translateX(0);
+    background-color: white;
+}
+
+.view-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: translateX(-100%);
+    transition: 1s;
+}
+
+/* main */
+.swiper {
+    width: 1536px;
+    margin: 138px auto;
+    overflow: hidden;
+}
+
+.swiper>h3 {
+    font-size: 34px;
+    margin-bottom: 58px;
+}
+
+.swiper-wrapper {display: flex;}
+
+.swiper-slide {
+    border-radius: 20px;
+    width: 25%;
+    flex-shrink: 0; /*상속x*/
+    position: relative;
+    overflow: hidden;
+}
+
+/* hover */
+.swiper-slide> p > img{
+    vertical-align: middle;
+    object-fit: cover;
+    transition: 1s;
+}
+.swiper-slide:hover> p > img { transform:scale(1.2);}
+
+.swiper-slide > p {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.swiper-slide>figcaption{
+    width: 100%;
+    height: 50%;
+    background-color: #EEE7E1;
+    transform: translateY(-100%);
+    opacity: 0;
+    position: absolute;
+    top:0; left: 0;
+    transition: 1s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.swiper-slide:hover>figcaption{
+    opacity: 100;
+    transform: translateY(0);
+}
+
+.swiper-slide>figcaption>p {font-size: 16px;}
+
+.swiper-slide>figcaption>b {
+    font-size: 26px;
+    font-family: 'prociono';
+    font-weight: 400;
+}
+
+.swiper-slide>figcaption>p>p {
+    margin-top:40px;
+}
+
+/* main */
+.main-contents {
+    width: 1536px;
+    margin:auto;
+}
+
+.main-contents-list {width: 100%;}
+
+.main-contents-list>figure {
+    display: flex;
+    justify-content: space-between;
+    gap: 190px;
+}
+
+.content_right {
+    flex-direction: row-reverse;
+    text-align: right;
+    margin-top: 116px;
+}
+
+.main-contents-list>figure>p {overflow: hidden;}
+
+.main-contents-list>figure>p>img {transition: 1s;}
+.main-contents-list>figure>p>img:hover {transform: scale(1.2);}
+
+.main-contents-list>figure>figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-contents-list>figure>figcaption>h2 {font-size: 52px;}
+
+.main-contents-list>figure>figcaption>div {
+    margin-top: 30px;
+    font-size: 32px;
+}
+
+.main-contents-list>figure>figcaption>p {
+    margin: 90px 0;
+    font-size: 24px;
+}
+
+.view-more {transition: 0.5s;}
+.view-more:hover { color: sandybrown;}
+
+/* footer */
+footer{
+    width: 100%;
+    background: #EEE7E1;
+}
+
+.footer {
+    font-size: 16px;
+    line-height: 30px;
+    width: 1536px;
+    margin:auto;
+    margin-top: 215px;
+    padding: 60px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-copyright {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.footer-copyright>h1 {font-size: 24px;}
+
+.footer-copyright>p {
+    font-family: 'Prociono';
+    font-size: 12px;
+}
+
+
+.footer-menu {
+    display: flex;
+    gap: 70px;
+    justify-content: space-between;
+    font-family: 'Prociono';
+}
+
+.sub{margin-top: 24px;}
+
+.footer-sitemap{text-decoration: underline;}
+
+.footer-sitemap>b {font-weight: 400;}
+
+.footer-menu > div > b {
+    font-family: 'Prociono';
+    text-decoration: underline;
+    font-weight: 400;
+}
+
+.footer-menu > div > p {margin-top: 16px;}

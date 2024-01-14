@@ -1,0 +1,78 @@
+/*
+memo
+1. flex-shrink
+: 없으면 figure 갯수가 width:100에 쫙 나옴!
+2. class = "swiper-slide"
+: 없어서 작동이 안됐음 ㅠ
+: swiper 가져다 쓸때 정보 제대로 확인할 것!!
+*/
+
+
+@import url(reset.css);
+
+h1{
+    font-family: 'Prociono';
+    font-weight: normal;
+}
+
+/* banner */
+.swiper{
+    width: 1536px;
+    margin: 100px auto;
+}
+
+.swiper>h1{
+    font-size : 34px;
+    margin-bottom: 62px;
+}
+
+.swiper>.swiper-wrapper{
+    display: flex;
+}
+.swiper-wrapper > figure{
+    border-radius: 20px;
+    width: 25%;
+    flex-shrink: 0; /*상속x*/
+    position: relative;
+    overflow: hidden; /*hover*/
+}
+.swiper-wrapper > figure > p{}
+
+.swiper-wrapper > figure > p > img{
+    transition: 1s;
+}
+.swiper-wrapper > figure:hover > p > img{
+    transform: scale(1.2);
+}
+.swiper-wrapper > figure > figcaption{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+    /* hover */
+    background-color: #EEE7E1;
+    width: 100%;
+    height: 50%;
+
+    position: absolute;
+    left: 0; top: 0;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: 1s;
+}
+.swiper-wrapper > figure:hover > figcaption{
+    opacity: 100;
+    transform: translateY(0);
+}
+
+
+.swiper-wrapper > figure > figcaption > strong{
+    font-family: 'Prociono';
+    font-weight: normal;
+}
+.swiper-wrapper > figure > figcaption > p{
+    margin-top: 16px;
+}
+
